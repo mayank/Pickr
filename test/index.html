@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>picEditor - demo</title>
+<style>
+#canvas, #menu, #canvas2, #menu2, #canvas3, #menu3, #canvas4, #menu4, #canvas5, #menu5, #canvas6, #menu6 { display:inline-block; margin:3px 8px; vertical-align:top; }
+
+#menu, #menu2, #menu3, #menu4, #menu5, #menu6 { max-width:150px; }
+</style>
+<script type='text/javascript' src='js/canvas.js'></script>
+<script type='text/javascript' src='js/lib/brightness.js'></script>
+<script type='text/javascript' src='js/lib/sepia.js'></script>
+<script type='text/javascript' src='js/lib/grayscale.js'></script>
+</head>
+
+<body>
+<div id='canvas'></div>
+<div id='menu'></div>
+
+<div id='canvas2'></div>
+<div id='menu2'></div>
+
+<div id='canvas3'></div>
+<div id='menu3'></div>
+
+<div id='canvas4'></div>
+<div id='menu4'></div>
+
+<div id='canvas5'></div>
+<div id='menu5'></div>
+
+
+<div id='canvas6'></div>
+<div id='menu6'></div>
+
+
+<script type='text/javascript'>
+
+// loads the canvas
+var editor = new picEditor(250,180,'canvas');
+var editor2 = new picEditor(250,180,'canvas2');
+var editor3 = new picEditor(250,180,'canvas3');
+var editor4 = new picEditor(250,180,'canvas4');
+var editor5 = new picEditor(250,180,'canvas5');
+var editor6 = new picEditor(250,180,'canvas6');
+
+// loads the given image 
+editor.loadImage(editor,'img/test.jpg');
+editor2.loadImage(editor2,'img/test.jpg');
+editor3.loadImage(editor3,'img/test.jpg');
+editor4.loadImage(editor4,'img/test.jpg');
+editor5.loadImage(editor5,'img/test.jpg');
+editor6.loadImage(editor6,'img/test.jpg');
+
+// loads the default menu
+var menu = new picEditMenu(editor,'menu');
+var menu2 = new picEditMenu(editor2,'menu2');
+var menu3 = new picEditMenu(editor3,'menu3');
+var menu4 = new picEditMenu(editor4,'menu4');
+var menu5 = new picEditMenu(editor5,'menu5');
+var menu6 = new picEditMenu(editor6,'menu6');
+
+// adding options to the menu
+menu.brightness();
+
+menu2.sepia();
+
+menu3.grayscale();
+
+menu4.brightness();
+
+menu5.sepia();
+
+menu6.grayscale();
+</script>
+</body>
+
+</html>
